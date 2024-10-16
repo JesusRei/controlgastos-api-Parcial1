@@ -1,0 +1,246 @@
+{
+	"info": {
+		"_postman_id": "3b73163f-7d64-4180-b2b6-3c9d16adb7d0",
+		"name": "Api Control-Gastos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34540996"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"miller.armstrong@example.org\",\r\n    \"password\": \"password\",\r\n    \"name\": \"Ted Howell PhD\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Index",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|C3bdnS0TbL2XY4d5cXvDZRKD9aR1iDecree3szICa70d2e25",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/gastos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"gastos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|C3bdnS0TbL2XY4d5cXvDZRKD9aR1iDecree3szICa70d2e25",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\": \"Compra de Gatos\",\r\n    \"monto\": 300.00,\r\n    \"fecha\": \"2024-10-13\",\r\n    \"categoria\": \"Animales\",\r\n    \"notas\": \"\",\r\n    \"recurrente\": false,\r\n    \"metodo_pago\": \"Tarjeta\",\r\n    \"frecuencia\": null,\r\n    \"estado\": \"Cancelado\",\r\n    \"moneda\": \"COP\",\r\n    \"proveedor\": \"Proveedor XYZ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/gastos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"gastos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|C3bdnS0TbL2XY4d5cXvDZRKD9aR1iDecree3szICa70d2e25",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/gastos/54",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"gastos",
+						"54"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|C3bdnS0TbL2XY4d5cXvDZRKD9aR1iDecree3szICa70d2e25",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\": \"Compra de materiales\",\r\n    \"monto\": 150.00,\r\n    \"fecha\": \"2024-10-18\",\r\n    \"categoria\": \"materiales\",\r\n    \"notas\": \"\",\r\n    \"recurrente\": false,\r\n    \"metodo_pago\": \"Efectivo\",\r\n    \"frecuencia\": null,\r\n    \"estado\": \"Cancelado\",\r\n    \"moneda\": \"COP\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/gastos/52",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"gastos",
+						"52"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Destroy",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|C3bdnS0TbL2XY4d5cXvDZRKD9aR1iDecree3szICa70d2e25",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/gastos/53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"gastos",
+						"53"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
